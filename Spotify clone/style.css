@@ -9,17 +9,20 @@ body{
     display: flex;
     flex-direction: row;
     height: 100vh;
+    padding: 0.5rem;
 }
 .sidebar{
     width: 300px;  
-    background-color: #121212;
+    background-color: #000000;
     border-radius: 1rem; /* Adjust the value as needed */
+    margin-right: 0.5rem;
 }
 .main-content{
     flex: 1;
-    background-color: rebeccapurple;
+    background-color: #000000;
     overflow: auto;
     border-radius: 1rem; /* Adjust the value as needed */
+    padding: 0 1.5rem 0 1.5rem;
 }
 .music-player{
     background-color: green;
@@ -33,7 +36,7 @@ a{
     color: white;
 }
 .nav{
-    background-color: darkblue;
+    background-color: #1f1f1f;
     display: flex;
     border-radius: 1rem; /* Adjust the value as needed */
     padding: 0.5rem 0.75rem;
@@ -55,4 +58,129 @@ a{
     font-size: 1rem;
     margin: 0.8rem;
     font-weight: 500;
+}
+.library{
+    background-color: #1f1f1f;
+    border-radius: 1rem;
+    height: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;
+}
+.options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.lib-options img{
+    height: 1.25rem;
+    width: 1.25rem;
+}
+.icons{
+    font-size: 1.20rem;
+}
+.icons i{
+    opacity: 0.6;
+    margin-right: 0.7rem;
+}
+.icons i:hover{
+    opacity: 1;
+}
+.box{
+    background-color: #e9d9d91d;
+    height: 8rem;
+    border-radius: 1rem;
+    margin: 0.75rem 0 0.75rem 0;
+    padding: 0.5rem 1.2rem;
+}
+.box-p1{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.box-p2{
+    font-size: 0.9rem;
+    font-weight: 300;
+    opacity: 0.8;
+}
+.badge{
+    background-color: #ffffff;
+    color: black;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-weight: 700;
+    width: fit-content;
+}
+.dark-badge{
+    background-color: #000000;
+    color: white;
+}
+.sticky-nav{
+    position: sticky;
+    top: 0;
+    background-color: #1f1f1f;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 0.75rem;
+    border-radius: 1rem; /* Adjust the value as needed */
+    padding: 1rem 0 1rem 0;
+    z-index: 5;
+}
+.sticky-nav-icons img{
+     height: 1.25rem;
+     width: 1.25rem;
+}
+.sticky-nav-options{
+    margin-right: 1rem;
+}
+.sticky-nav-options button{
+    margin-right: 0.5rem;
+}
+.dowbutton{
+    margin-right: 0.3rem;
+}
+@media (max-width: 1000px) {
+    .hide{
+        display: none;
+    }
+}
+.cards{
+    background-color: #1f1f1f;
+    width:150px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+}
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-img{
+    width: 100%;
+    border-radius: 0.5rem;
+}
+.card-title{
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0.5rem 0 0.25rem 0;
+}
+.card-info{
+    font-size: 0.9rem;
+    font-weight: 300;
+    opacity: 0.8;
+}
+.footer{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.line{
+    width: 90%;
+    height: 30%;
+    background-color: #000000;
+    border-top: 1px solid white;
+    opacity: 0.5;
 }
