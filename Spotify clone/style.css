@@ -25,7 +25,7 @@ body{
     padding: 0 1.5rem 0 1.5rem;
 }
 .music-player{
-    background-color: green;
+    background-color: #000000;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -118,18 +118,18 @@ a{
 .sticky-nav{
     position: sticky;
     top: 0;
-    background-color: #1f1f1f;
+    background-color: #000000;
     justify-content: space-between;
     display: flex;
     align-items: center;
-    padding: 0.7rem 0.75rem;
     border-radius: 1rem; /* Adjust the value as needed */
-    padding: 1rem 0 1rem 0;
+    padding: 0.75rem 0 0.75rem 0;
+    margin-left: -0.5rem;
     z-index: 5;
 }
 .sticky-nav-icons img{
+     margin-right: 1rem;
      height: 1.25rem;
-     width: 1.25rem;
 }
 .sticky-nav-options{
     margin-right: 1rem;
@@ -183,4 +183,88 @@ a{
     background-color: #000000;
     border-top: 1px solid white;
     opacity: 0.5;
+}
+.music-player{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.album{
+    width: 25%;
+}
+.player{
+    width: 50%;
+}
+.controls{
+    width: 25%;
+}
+.player-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.play-control-icon{
+    height: 1rem;
+    margin: 0 1rem;
+    opacity: 0.7;
+}
+.play-control-icon:hover{
+    opacity: 1;
+}
+.playback-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress-bar{
+    width: 70%;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.progress-bar::-webkit-slider-runnable-track{
+    background-color: #ffffff;
+    border-radius: 20%;
+    height: 0.1rem;
+    cursor: pointer;
+}
+.progress-bar::-webkit-slider-thumb{
+    appearance: none;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -0.35rem;
+}
+.album{
+    display: flex;
+    align-items: center;
+}
+.album-img{
+    height: 50px;
+    width: 50px;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+}
+.album-artist{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: -0.3rem;
+}
+.album-title{
+    font-size: 1rem;
+    opacity: 0.8;
+    font-size: 0.6rem;
+    margin-bottom: 1rem;
+}
+.plus-icon{
+    height: 1.25rem;
+    opacity: 0.7;
+    margin-left: 2.5rem;
+}
+.plus-icon:hover{
+    opacity: 1;
 }
