@@ -268,3 +268,27 @@ a{
 .plus-icon:hover{
     opacity: 1;
 }
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.controls i{
+    font-size: 1.25rem;
+    opacity: 0.7;
+    margin: 0 1rem;
+}
+.controls i:hover{
+    opacity: 1;
+}
+.tot-time{
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin: 0 0.5rem;
+}
+.curr-time{
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin: 0 0.5rem;
+}
