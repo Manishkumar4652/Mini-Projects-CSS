@@ -1,0 +1,215 @@
+Reset and Base Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Animated Gradient Background */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    overflow: hidden;
+}
+
+/* Left Emoji Decoration */
+.emoji-left {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 6rem;
+    animation: floatLeft 4s ease-in-out infinite, bounce 2s ease-in-out infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Right Emoji Decoration */
+.emoji-right {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 6rem;
+    animation: floatRight 4s ease-in-out infinite, bounce 2s ease-in-out infinite 0.5s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Float Left Animation */
+@keyframes floatLeft {
+    0%, 100% { transform: translateY(-50%) translateX(0px); }
+    50% { transform: translateY(-50%) translateX(-30px); }
+}
+
+/* Float Right Animation */
+@keyframes floatRight {
+    0%, 100% { transform: translateY(-50%) translateX(0px); }
+    50% { transform: translateY(-50%) translateX(30px); }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-60%) scale(1.1); }
+}
+
+/* Background Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container with Glassmorphism Effect */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2.5rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transform: translateY(50px);
+    opacity: 0;
+    animation: fadeInUp 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Heading Styling */
+h3 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+/* Button Styling & Animation */
+#fetch-btn {
+    background: #ffffff;
+    color: #e73c7e;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    outline: none;
+    margin-bottom: 2rem;
+}
+
+#fetch-btn:hover {
+    background: #e73c7e;
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(231, 60, 126, 0.4);
+}
+
+#fetch-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Joke Text Paragraphs */
+p {
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific styling for Setup and Delivery */
+#jok-text {
+    border-left: 4px solid #ffffff;
+    padding-left: 10px;
+    text-align: left;
+    font-style: italic;
+    animation: fadeInText 0.5s ease-in-out;
+}
+
+#delivery {
+    color: #ffe600; /* Delivery thoda alag color me highlight hoga */
+    font-weight: 700;
+    margin-top: 1.5rem;
+    text-align: right;
+    padding-right: 10px;
+    border-right: 4px solid #ffe600;
+    animation: fadeInText 0.8s ease-in-out;
+}
+
+/* Text Fade-in Animation when new joke loads */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Language Section Styling */
+.language-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.language-section h4 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Hindi text styling */
+#jok-text-hindi,
+#delivery-hindi {
+    color: #ffffff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    font-family: 'Segoe UI', 'Noto Sans Devanagari', sans-serif;
+    animation: fadeInText 0.5s ease-in-out;
+}
+
+#jok-text-hindi {
+    border-left: 4px solid #ffeb3b;
+    padding-left: 10px;
+    text-align: left;
+    font-style: italic;
+}
+
+#delivery-hindi {
+    color: #ffeb3b;
+    font-weight: 700;
+    margin-top: 1rem;
+    text-align: right;
+    padding-right: 10px;
+    border-right: 4px solid #ffeb3b;
+}
