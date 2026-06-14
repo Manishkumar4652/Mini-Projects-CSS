@@ -3,30 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Joks</title>
+    <title>Jester | Interactive Random Joke Generator</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Floating Background Emojis -->
     <div class="emoji-left">😂</div>
     <div class="emoji-right">🤣</div>
     
+    <!-- Main Interactive Card -->
     <div class="container">
-        <h3>Random Joks 😂</h3>
-        <button id="fetch-btn">Fetch Random Jok</button>
-        
-        <div class="language-section">
-            <h4>English</h4>
-            <p id="jok-text">Jok Will Appear Here</p>
-            <p id="delivery">Delivery Will Appear Here</p>
+        <header class="app-header">
+            <h3>Jester 🎭</h3>
+            <p class="subtitle">Bilingual Random Joke Generator</p>
+        </header>
+
+        <!-- Segmented Tab Toggles -->
+        <div class="tabs-container">
+            <button class="tab-btn active" id="tab-en">English</button>
+            <button class="tab-btn" id="tab-hi">हिन्दी</button>
         </div>
         
-        <div class="language-section">
-            <h4>हिंदी</h4>
-            <p id="jok-text-hindi">जोक यहाँ दिखाई देगा</p>
-            <p id="delivery-hindi">डिलीवरी यहाँ दिखाई देगी</p>
+        <!-- Joke Card Display Area -->
+        <div class="joke-card">
+            <!-- English Joke Content -->
+            <div class="joke-section active" id="sec-en">
+                <div class="joke-body">
+                    <p id="jok-text">Click the button below to fetch a joke! 😄</p>
+                    <p id="delivery" class="delivery-text"></p>
+                </div>
+            </div>
+            
+            <!-- Hindi Joke Content -->
+            <div class="joke-section" id="sec-hi">
+                <div class="joke-body">
+                    <p id="jok-text-hindi">जोक देखने के लिए नीचे बटन दबाएं! 😄</p>
+                    <p id="delivery-hindi" class="delivery-text"></p>
+                </div>
+            </div>
+
+            <!-- Action Bar (Speech, Copy, Share) -->
+            <div class="action-bar">
+                <button class="action-btn" id="speak-btn" title="Listen to Joke" aria-label="Listen to Joke">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                    <span>Listen</span>
+                </button>
+                <button class="action-btn" id="copy-btn" title="Copy to Clipboard" aria-label="Copy to Clipboard">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>Copy</span>
+                </button>
+                <button class="action-btn" id="share-btn" title="Copy Share Link" aria-label="Copy Share Link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                    <span>Share</span>
+                </button>
+            </div>
         </div>
+        
+        <!-- Main Trigger Button -->
+        <button id="fetch-btn">
+            <span class="btn-text">Get Random Joke ⚡</span>
+            <div class="loader hidden"></div>
+        </button>
     </div>
 
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">Copied to clipboard! 📋</div>
+
+    <!-- Brand Footer -->
+    <footer class="footer">
+        <p>Interactive mini-project built with CSS & JS</p>
+    </footer>
+
+    <!-- Axios and App Script -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
 </body>
